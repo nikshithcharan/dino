@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" href="sign-up.css">
+
+    <!-- <link rel="icon" href="C:\Users\Anjana\Desktop\html\trex.jpg"> -->
+</head>
+<body background="C:\Users\Anjana\Desktop\html\lLIYKM.jpg"> 
+<div id="first">
+    <div id="second"><h1>Sign-Up</h1></div>
+    <label id="usern">Username:<br><input type="text" id="username" name="username" title="Enter your username" placeholder="Enter Username" /><br></label>
+    <label id="usern">Email:<br><input type="text" id="email"  name="email" title="Enter your email" placeholder="Enter Email" /><br></label>
+    <label id="usern">Password:<br><input type="password" id="password" name="password" autocomplete="off" title="Enter your Password" placeholder="Enter password" /><br></label>
+    <input type="submit" id="signUp" name="signup_submit" value="Sign-Up">
+    <br>
+    <!-- <p id="sen">Already have an account? </p> -->
+    <div class="firsts">
+        <form autocomplete="on">
+            <div class="seconds">
+                <h1>Sign-IN</h1>
+            </div>
+            <div class="thirds">
+                <label id="userl">Email:</label><br>
+                <input type="text" id="emaillogin" title="Enter your email" name="email" placeholder="Email"><br>
+            </div>
+            <div class="fourths">
+                <label id="userl">Password:</label><br>
+                <input type="password" id="passwordlogin" title="Enter your password" name="password" placeholder="Password"> <br>
+            </div>
+            <div class="fifths">
+                <input type="submit" id="login" name="login" value="Sign-in">
+            </div>
+        </form>
+        
+    </div>   
+</div>   
+
+
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+    import { getDatabase,set,ref,update } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyAB4broJA69_QUGnr7c780orPlwE7ZQ6CY",
+    authDomain: "trex-523bf.firebaseapp.com",
+    databaseURL: "https://trex-523bf-default-rtdb.firebaseio.com",
+    projectId: "trex-523bf",
+    storageBucket: "trex-523bf.appspot.com",
+    messagingSenderId: "146188738610",
+    appId: "1:146188738610:web:1ed92be3cc3ced8e5c5c2b"
+  };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    const signUp=document.getElementById("signUp");
+signUp.addEventListener('click',(e) =>{
+    var email= document.getElementById('email').value;
+    var password= document.getElementById('password').value;
+    var username= document.getElementById('username').value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        set(ref(database,'users/'+ user.uid),{
+            username: username,
+            email: email
+        })
+        alert("User Created");
+        // ...
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+        // ..
+    });
+});
+const login=document.getElementById("login");
+login.addEventListener('click',(e)=>{
+    e.preventDefault();
+    var email= document.getElementById("emaillogin").value;
+    var password= document.getElementById("passwordlogin").value;
+    console.log(login);
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+        // Signed in 
+        // const user = userCredential.user;
+        // const dt = new Date();
+        // update(ref(database,'users/'+ user.uid),{
+        //     last_login:dt,
+        // })
+        // ...
+        alert('User logged in!');
+        window.location.assign("1.html");
+        // console.log('user logged in');
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+        // alert(errorMessage);
+    });
+});
+// const user=auth.currentUser;
+onAuthStateChanged(auth,(user)=>{
+    if(user) {
+        const uid= user.uid;
+    }
+    else{
+
+    }
+});
+
+// logout.addEventListener('click',(e)=>{
+//     signOut(auth).then(() => {
+//         alert('user logged out');
+//     // Sign-out successful.
+//     }).catch((error) => {
+//         const errorCode = error.code;
+//         const errorMessage = error.message;
+//         alert(errorMessage);
+//     // An error happened.
+// });
+
+// });
+  
+
+</script>
+<script src="sign_up.js"></script>
+</html>

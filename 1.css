@@ -1,0 +1,192 @@
+body{
+    background-color:beige;
+}
+#title{
+    text-align:center;
+    top:50px;
+    font-size:30px;
+}
+#title2{
+    text-align: center;
+    font-size:20px;
+}
+
+#box{
+    
+    height:25%;
+    width:100%;
+    border:2px ;
+    margin-top:170px;
+    background-color:;
+    
+}
+#dino{
+    width:40px;
+    height:40px;
+    background-image: url(dino.jpg);
+    background-size:40px;
+    top:220px;
+    position:relative;
+    left:0px;
+    
+    
+}
+.jump{
+    animation:jump 0.3s linear; 
+}
+
+
+
+@keyframes jump {
+    0%{left:0px;bottom:0px;}
+    50%{left:0px;top:160px;}
+    100%{left:0px;bottom:0px;}
+    
+}
+.jump2{
+    animation:jump2 0.35s linear;
+}
+@keyframes jump2{
+    0%{left:0px;bottom:0px;}
+    50%{left:0px;top:140px;}
+    100%{left:0px;bottom:0px;}
+}
+
+#cactus1{
+    width:20px;
+    height:30px;
+    top:190px;
+    left:1400px;
+    position: relative;
+    display: block;
+    /* animation:move  4s infinite linear; */
+    background-image: url(cactus1.png);
+    background-size: 20px;
+}
+.move{
+    animation:move  4s infinite linear;
+}
+
+@keyframes move{
+    0%{left:1400px;}
+    100%{left:-30px;}
+}
+/* cactus 2 */
+/* #cactus2{
+    width:60px;
+    height:55px;
+    top:158px;
+    left:2000px;
+    position: relative;
+    background-image: url(block.png);
+    background-size: 55px;
+    background-repeat: no-repeat;
+    animation: move 8s infinite linear;
+} */
+/* @keyframes move2{
+    0%{left:2500px;}
+    100%{left:-30px;}
+
+} */
+/* #cactus3{
+    width:20px;
+    height:30px;
+    top:104px;
+    left:2000px;
+    position: relative;
+    background-image: url(cactus1.png);
+    background-size: 20px;
+    animation: move3 12s infinite linear;
+}
+@keyframes move3{
+    0%{left:3000px;}
+    100%{left:-30px;}
+
+} */
+
+#cloud1{
+    width:70px;
+    height:30px;
+    background-image: url(2x-cloud.png);
+    background-size: 70px;
+    background-repeat: no-repeat;
+    position:relative;
+    animation: cloudmove 6s infinite linear;
+}
+@keyframes cloudmove{
+    0%{left:1400px;}
+    100%{left:-70px;}
+}
+
+#cloud2{
+    width:70px;
+    height:30px;
+    background-image: url(2x-cloud.png);
+    background-size: 70px;
+    top:80px;
+    background-repeat: no-repeat;
+    position:relative;
+    animation: cloudmove2 8s infinite linear;
+}
+@keyframes cloudmove2{
+    0%{left:2000px;}
+    100%{left:-70px;}
+}
+
+#cloud3{
+    width:70px;
+    height:30px;
+    background-image: url(2x-cloud.png);
+    background-size: 70px;
+    top:px;
+
+    background-repeat: no-repeat;
+    position:relative;
+    animation: cloudmove3 11s infinite linear;
+}
+@keyframes cloudmove3{
+    0%{left:3000px;}
+    100%{left:-70px;}
+   
+}
+
+#ground{
+
+    height:15px;
+    width:2800px;
+    margin-top:90px;
+    position:relative;
+    background-image: url(ground.png);
+    animation: groundm 6s linear infinite;
+}
+@keyframes groundm{
+    0%{left:0px;}
+    100%{left:-1400px;}
+
+}
+
+#score{
+    height:35px;
+    width:250px;
+    margin-top:-250px;
+    margin-left:1000px;
+
+    font-size:20px ;
+}
+#highscore{
+    height:auto;
+    width:auto;
+    font-size:20px;
+    margin-left:1000px;
+}
+
+#gameover{
+    display:none;
+    height:auto;
+    width:300px;
+    border:2px solid black;
+    font-size:30px;
+    padding:10px;
+    text-align: center;
+    margin-left:35%;
+}

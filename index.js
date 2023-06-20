@@ -1,0 +1,1 @@
+firebase.database().ref("score").set("00");

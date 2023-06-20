@@ -1,0 +1,74 @@
+body{
+    background-position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:fit-content;
+    
+}
+#first{
+    border:2px solid ;
+    border-color: chocolate;
+    height:650px;
+    width:300px;
+    margin-left:300px;
+    margin-top:100px;
+    border-radius:40px;
+}
+#first label{
+    display:block;
+}
+#first input[type="text"]{
+    padding-bottom:6px;
+}
+#first input[type="submit"]
+{
+    text-align: center;
+    background-color: aquamarine;
+    color:blueviolet;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    margin-top:30px;
+    margin-left:110px;
+}
+#second{
+    text-align: center;
+    font-family:cursive ;
+}
+#username,#email,#password{
+    
+    margin-left:15px;
+    text-align: center;
+    margin-top:10px;
+}
+#sixth{
+    margin-top:20px;
+    color:blue;
+    margin-left:15px;
+
+}
+#signUp{
+    text-align: center;
+    
+}
+
+#usern{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.seconds{
+    text-align: center;
+    font-family:cursive ;
+
+
+}
+#userl{
+    text-align: center;
+}
+#emaillogin,#passwordlogin{
+    text-align: center;
+    margin-left: 65px;
+}
+#sen{
+    margin-left: 30px;
+}
